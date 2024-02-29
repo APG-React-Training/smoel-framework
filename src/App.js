@@ -1,17 +1,13 @@
 
 import './resources/styles/main.css'
 
-import TitleText from './components/atoms/TitleText'
-import InfoText from './components/atoms/InfoText'
-import SearchField from './components/atoms/SearchField'
+import Overview from './components/pages/Overview'
 
 const App = () => {
   
   return(
     <div>
-      <TitleText text='titel'/>
-      <InfoText text='info'/>
-      <SearchField />
+      <Overview />
     </div>
   )
  
