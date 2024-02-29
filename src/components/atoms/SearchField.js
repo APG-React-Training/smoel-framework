@@ -1,14 +1,11 @@
-import { useState } from 'react'
 
-const SearchField = () => {
-
-    const [value, setValue] = useState('')
+const SearchField = ({ value, handler }) => {
 
     return(
         <div className='SearchField'>
             <input type='text'
                    value={ value }
-                   onChange={ (e) => setValue(e.target.value)} /> 
+                   onChange={ handler } /> 
         </div>
     )
 

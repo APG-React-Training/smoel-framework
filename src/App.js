@@ -21,8 +21,21 @@ const App = () => {
     })
   }, [])
 
+  const resetFilter = () => {
+    setFilteredData(data)
+  }
+
+  const filterPersons = (search) => {
+    const result = data.filter( item => 
+      item.firstname.toUpperCase().includes(search.toUpperCase())
+      || 
+      item.lastname.toUpperCase().includes(search.toUpperCase())     
+      )
+    setFilteredData(result)  
+  }
+
   return(
-    <DataContext.Provider value={{ filteredData }}>
+    <DataContext.Provider value={{ filteredData, filterPersons, resetFilter }}>
       { isLoaded && <Overview /> }
     </DataContext.Provider>
   )
