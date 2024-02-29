@@ -4,6 +4,8 @@ import './resources/styles/main.css'
 import Overview from './components/pages/Overview'
 import fetchData from './lib/API'
 
+import DataContext from './context/DataContext'
+
 const App = () => {
 
   const [data, setData] = useState([])
@@ -20,10 +22,9 @@ const App = () => {
   }, [])
 
   return(
-    <div>
-      { JSON.stringify(filteredData, null, 2) }
-      <Overview />
-    </div>
+    <DataContext.Provider value={{ filteredData }}>
+      { isLoaded && <Overview /> }
+    </DataContext.Provider>
   )
  
 }
